@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: notice-service
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 42.192.1.98:8848
+      config:
+        server-addr: 42.192.1.98:8848
+        file-extension: yml
+        namespace: dev
+        group: DEFAULT_GROUP
+        timeout: 5000
+        config-long-poll-timeout: 1000
+        config-retry-time: 2000
+        max-retry: 3
+        refresh-enabled: true
+#    sentinel:
+#      transport:
+#        port: 8719
+#        dashboard: http://localhost:8080
+#      web-context-unify: false
+#      datasource:
+#        my-flow:
+#          nacos:
+#            username: nacos
+#            password: nacos
+#            server-addr: localhost:8848
+#            namespace: test
+#            group-id: SENTINEL_GROUP
+#            data-id: ${spring.application.name} -flow-rules
+#            rule-type: flow
+  #        extension-configs:
+#          -dataId:
+#           group:
+#           refresh: true
+
