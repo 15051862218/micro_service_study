@@ -1,13 +1,12 @@
 spring:
+  profiles:
+    active: dev
   application:
-    name: advertice-service
+    name: user-service
   cloud:
     nacos:
-      username: nacos
-      password: nacos
-      server-addr: 42.192.1.98:8848
       config:
-        server-addr: 42.192.1.98:8848
+        server-addr: 139.224.233.37:8848
         file-extension: yml
         namespace: dev
         group: DEFAULT_GROUP
@@ -16,7 +15,8 @@ spring:
         config-retry-time: 2000
         max-retry: 3
         refresh-enabled: true
-#    sentinel:
+#        prefix: user-service
+  #    sentinel:
 #      transport:
 #        port: 8719
 #        dashboard: http://localhost:8080

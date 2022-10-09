@@ -1,0 +1,44 @@
+server:
+  port: 8085
+spring:
+#  application:
+#    name: gateway-service
+  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+#      routes:
+#        - id: user-service
+#          order: 1
+#          predicates:
+#            - Path=/users/**
+#          uri: http://localhost:8082
+#        - id: content-service
+#          order: 1
+#          predicates:
+#            - Path=/shares/**
+#          uri: http://localhost:8083
+#        - id: advertise-service
+#          order: 1
+#          predicates:
+#            - Path=/advertises/**
+#          uri: http://localhost:8081
+#        - id: notice-service
+#          order: 1
+#          predicates:
+#            - Path=/notices/**
+#          uri: http://localhost:8080
+    nacos:
+      discovery:
+        server-addr: 139.224.233.37:8848
+        heart-beat-interval: 5000
+        heart-beat-timeout: 20000
+        namespace: prod
+        register-enabled: true
+        username: nacos
+        password: nacos
+
+
+

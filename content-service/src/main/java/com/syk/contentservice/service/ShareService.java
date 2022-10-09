@@ -1,7 +1,9 @@
 package com.syk.contentservice.service;
 
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.syk.contentservice.domain.dto.ShareAuditDto;
 import com.syk.contentservice.domain.entity.Share;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -23,9 +25,11 @@ public interface ShareService {
      * 获取所有share
      * @return 所有share
      */
-    List<Share> findAll();
+    Page<Share> findAll(Integer page,Integer pageSize);
 
     String getNumber(int number);
 
     String blockHandlerGetNumber(int number, BlockException e);
+
+    Share auditShare(ShareAuditDto shareAuditDto);
 }

@@ -1,0 +1,77 @@
+server:
+  port: 8085
+spring:
+#  application:
+#    name: gateway-service
+  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+#      routes:
+#        - id: user-service
+#          order: 1
+#          predicates:
+#            - Path=/users/**
+#            - After=2022-01-20T17:42:47.789-07:00[America/Denver]
+#            - Before=2021-01-20T17:42:47.789-07:00[America/Denver]
+#            - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2023-01-21T17:42:47.789-07:00[America/Denver]
+#            - Method=GET,POST
+#            - Query=username
+#            - Query=id
+#            - Cookie=chocolate,ch.p
+#            - Header=X-Request-Id, \d+
+#            - Host=**.somehost.org,**.anotherhost.org
+#            - Weight=testWeight, 4
+#            - RemoteAddr= 192.168.194.1/24
+#          uri: http://localhost:8082
+#          uri: http://localhost:55429
+#        - id: user-service
+#          order: 1
+#          filters:
+#            - AddRequestHeader=X-Request-red, 123
+#            - AddRequestParameter=red, blue
+#            - AddResponseHeader=X-Response-Red, 123
+#            - PrefixPath=/mypath
+#             - TokenRelay=syk
+#            - StripPrefix=1
+#            - SetStatus=401
+#            - SetResponseHeader=X-Response-Red, Blue
+#            - SetRequestHeader=X-Request-Red, Blue
+#            - SetPath=/users/{segment}
+#          predicates:
+##            - Path=/api/users/**
+#            - Path=/api/users/{segment}
+#          uri: http://localhost:8082
+#
+#        - id: content-service
+#          order: 1
+#          predicates:
+#            - Path=/shares/**
+#          uri: http://localhost:8083
+#        - id: advertise-service
+#          order: 1
+#          predicates:
+#            - Path=/advertises/**
+#          uri: http://localhost:8081
+#        - id: notice-service
+#          order: 1
+#          predicates:
+#            - Path=/notices/**
+#          uri: http://localhost:8080
+#      default-filters:
+#        - AddResponseHeader=X-Response-Default-Red, Default-Blue
+#        - PrefixPath=/users
+    nacos:
+      discovery:
+        server-addr: 139.224.233.37:8848
+        heart-beat-interval: 5000
+        heart-beat-timeout: 20000
+        namespace: dev
+        register-enabled: true
+        username: nacos
+        password: nacos
+
+
+

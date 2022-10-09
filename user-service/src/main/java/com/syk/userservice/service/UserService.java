@@ -2,6 +2,7 @@ package com.syk.userservice.service;
 
 import com.syk.userservice.domain.dto.UserDto;
 import com.syk.userservice.domain.entity.User;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @description:
@@ -24,4 +25,6 @@ public interface UserService {
      * @return 登录用户信息
      */
     User login(UserDto userDto);
+
+    User UploadImg(String multipartFile,Integer id);
 }

@@ -1,0 +1,25 @@
+# Tomcat
+server:
+  port: 9300
+# Minio??
+#minio:
+#  url: http://139.224.233.37:9000/
+#  accessKey: admin
+#  secretKey: admin123456
+#  bucketName: mybuc
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.224.233.37:8848
+        heart-beat-interval: 5000
+        heart-beat-timeout: 20000
+        namespace: dev
+        register-enabled: true
+        username: nacos
+        password: nacos

@@ -1,14 +1,18 @@
 package com.syk.userservice.service.impl;
 
+
 import com.syk.userservice.domain.dto.UserDto;
 import com.syk.userservice.domain.entity.User;
 import com.syk.userservice.repository.UserRepository;
 import com.syk.userservice.service.UserService;
-import com.syk.userservice.service.UserService;
+import com.syk.userservice.utils.JwtOperator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
+import org.springframework.web.multipart.MultipartFile;
+
 
 /**
  * @description:
@@ -20,6 +24,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final JwtOperator jwtOperator;
 
     @Override
     public User findById(Integer id) {
@@ -28,6 +33,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User login(UserDto userDto) {
-        return userRepository.findByMobileAndPassword(userDto.getMobile(), userDto.getPassword());
+        String password = DigestUtils.md5DigestAsHex(userDto.getPassword().getBytes());
+
+        // 2.设置用户信息
+        return userRepository.findByMobileAndPassword(userDto.getMobile(), password);
+    }
+
+    @Override
+    public User UploadImg(String multipartFile, Integer id) {
+        User user = findById(id);
+        user.setAvatar(multipartFile);
+      return   userRepository.saveAndFlush(user);
     }
 }

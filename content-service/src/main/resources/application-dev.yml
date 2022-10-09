@@ -1,0 +1,20 @@
+server:
+  port: 8083
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.224.233.37:8848
+        heart-beat-interval: 5000
+        heart-beat-timeout: 20000
+        namespace: dev
+        register-enabled: true
+        username: nacos
+        password: nacos
+jwt:
+  secret: aaaaaaaaaabbbbbbbbbbbcccccccccccdddddddd
+  expire-time-in-second: 1209600
+rocketmq:
+  name-server: 47.96.31.161:9876
+  producer:
+    group: test-group
