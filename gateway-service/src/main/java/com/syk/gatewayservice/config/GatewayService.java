@@ -2,7 +2,7 @@ package com.syk.gatewayservice.config;
 
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cloud.endpoint.event.RefreshEvent;
+
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinitionWriter;

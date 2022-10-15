@@ -40,6 +40,11 @@ public class UserController {
     private final JwtOperator jwtOperator;
     private final StringRedisTemplate redisTemplate;
 
+    @GetMapping("")
+    public ResponseResult getUserById11() {
+        return ResponseResult.success("user");
+    }
+
     @CheckLogin
     @GetMapping("{id}")
     public ResponseResult getUserById(@PathVariable Integer id) {

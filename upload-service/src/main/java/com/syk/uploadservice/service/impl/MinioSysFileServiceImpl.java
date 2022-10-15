@@ -41,6 +41,10 @@ public class MinioSysFileServiceImpl implements ISysFileService {
                 .contentType(file.getContentType())
                 .build();
         client.putObject(args);
-        return minioConfig.getUrl()  + minioConfig.getBucketName() + "/" + fileName;
+        System.out.printf(minioConfig.getUrl());
+        System.out.printf(minioConfig.getBucketName());
+        System.out.printf(fileName);
+//        return minioConfig.getUrl()  + minioConfig.getBucketName() + "/" + fileName; //远程minio
+        return "http://10.20.6.51:9090/"  + minioConfig.getBucketName() + "/" + fileName;
     }
 }

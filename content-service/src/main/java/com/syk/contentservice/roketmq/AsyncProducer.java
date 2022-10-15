@@ -20,7 +20,8 @@ public class AsyncProducer {
         // 实例化消息生产者Producer
         DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
         // 设置NameServer的地址
-        producer.setNamesrvAddr("47.96.31.161:9876");
+//        producer.setNamesrvAddr("47.96.31.161:9876");
+        producer.setNamesrvAddr("127.0.0.1:9876");
         // 启动Producer实例
         producer.start();
         producer.setRetryTimesWhenSendAsyncFailed(0);

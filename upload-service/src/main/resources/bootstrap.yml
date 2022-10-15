@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: upload-service
   cloud:
@@ -8,7 +8,7 @@ spring:
       config:
         server-addr: 139.224.233.37:8848
         file-extension: yml
-        namespace: prod
+        namespace: dev
         timeout: 5000
         config-long-poll-timeout: 1000
         enable-remote-sync-config: true

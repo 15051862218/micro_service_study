@@ -15,6 +15,7 @@ jwt:
   secret: aaaaaaaaaabbbbbbbbbbbcccccccccccdddddddd
   expire-time-in-second: 1209600
 rocketmq:
-  name-server: 47.96.31.161:9876
+#  name-server: 47.96.31.161:9876
+  name-server: 127.0.0.1:9876
   producer:
     group: test-group

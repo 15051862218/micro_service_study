@@ -1,9 +1,9 @@
 server:
   port: 8082
 minio:
-  url: http://139.224.233.37:9000/
+  url: http://127.0.0.1:9000/
   accessKey: admin
-  secretKey: admin123456
+  secretKey: admin1234
   bucketName: mybuc
 spring:
   cloud:
@@ -27,6 +27,7 @@ jwt:
   expire-time-in-second: 1209600
 
 rocketmq:
-  name-server: 47.96.31.161:9876
+#  name-server: 47.96.31.161:9876
+  name-server: 127.0.0.1:9876
 # Minio??
 
